@@ -44,6 +44,7 @@ jobs:
 
   deploy:
     environment:
+      # The github-pages environment is automatically created by GitHub Pages
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
