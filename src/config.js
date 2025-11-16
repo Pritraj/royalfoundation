@@ -41,7 +41,7 @@ export const siteConfig = {
   },
 
   // GitHub Pages Settings
-  base: "/", // Change to "/repo-name/" if not using custom domain
+  base: "/",
 
   // Language
   language: "en", // Change to "mr" for Marathi if needed
