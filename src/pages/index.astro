@@ -1,0 +1,73 @@
+---
+// Main landing page
+import Hero from '../components/Hero.astro';
+import Gallery from '../components/Gallery.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config.js';
+
+// Import Facebook content data
+import facebookData from '../data/facebook-content.json';
+
+const posts = facebookData.posts || [];
+---
+
+<!DOCTYPE html>
+<html lang={siteConfig.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={siteConfig.description} />
+    <meta name="keywords" content={siteConfig.seo.keywords.join(', ')} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:title" content={siteConfig.title} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:image" content={`${siteConfig.url}${siteConfig.seo.ogImage}`} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteConfig.url} />
+    <meta property="twitter:title" content={siteConfig.title} />
+    <meta property="twitter:description" content={siteConfig.description} />
+    <meta property="twitter:image" content={`${siteConfig.url}${siteConfig.seo.ogImage}`} />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{siteConfig.title}</title>
+
+    <style is:global define:vars={{ primaryColor: siteConfig.branding.primaryColor, secondaryColor: siteConfig.branding.secondaryColor }}>
+      :root {
+        --primary-color: var(--primaryColor);
+        --secondary-color: var(--secondaryColor);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #1c1e21;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #gallery {
+        scroll-margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Hero />
+    <div id="gallery">
+      <Gallery posts={posts} />
+    </div>
+    <Footer />
+  </body>
+</html>

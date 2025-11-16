@@ -1,0 +1,27 @@
+{
+  "name": "royalfoundation",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Official website for Royal Foundation - Empowering Communities",
+  "author": "Pritam Rajput",
+  "license": "MIT",
+  "homepage": "https://royalfoundations.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pritamrajput/royalfoundation.git"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "scrape": "node scripts/facebook-scraper.js",
+    "download-images": "node scripts/download-images.js"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.8",
+    "puppeteer": "^24.30.0",
+    "tailwindcss": "^4.1.17"
+  }
+}
