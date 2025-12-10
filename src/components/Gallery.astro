@@ -1,6 +1,6 @@
 ---
 // Gallery Component - Displays Facebook posts in a responsive grid
-import { siteConfig } from '../config.js';
+import { siteConfig } from "../config.js";
 
 interface Props {
   posts: Array<{
@@ -12,149 +12,74 @@ interface Props {
 }
 
 const { posts } = Astro.props;
+// Limit explicit posts if needed or handle logic
+// For now, displaying all passed posts
 ---
 
-<section class="gallery">
-  <div class="container">
-    <h2 class="section-title">Our Gallery</h2>
+<section id="gallery" class="section-padding bg-slate-50">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+        Our Impact in Action
+      </h2>
+      <p class="text-gray-600">
+        A glimpse into our daily social welfare activities and community
+        engagements.
+      </p>
+    </div>
 
-    <div class="grid">
-      {posts.map((post) => (
-        <article class="post-card">
-          {post.localImages && post.localImages.length > 0 && (
-            <div class="image-container">
-              <img
-                src={post.localImages[0]}
-                alt={`Post ${post.id}`}
-                loading="lazy"
-                class="main-image"
-              />
-              {post.localImages.length > 1 && (
-                <span class="image-count">+{post.localImages.length - 1}</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        posts.map((post) => (
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full border border-gray-100">
+            {post.localImages && post.localImages.length > 0 && (
+              <div class="relative aspect-video bg-gray-100 overflow-hidden group">
+                <img
+                  src={post.localImages[0]}
+                  alt={`Activity from ${post.timestamp}`}
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {post.localImages.length > 1 && (
+                  <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    +{post.localImages.length - 1} more
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div class="p-6 flex-1 flex flex-col">
+              {post.text && (
+                <div class="mb-4 flex-1">
+                  <p class="text-gray-700 text-sm leading-relaxed line-clamp-3">
+                    {post.text}
+                  </p>
+                </div>
+              )}
+
+              {post.timestamp && (
+                <div class="pt-4 border-t border-gray-50 flex items-center justify-between text-xs text-gray-500 font-medium">
+                  <time>{post.timestamp}</time>
+                  <span class="text-blue-900 bg-blue-50 px-2 py-1 rounded-md">
+                    Updates
+                  </span>
+                </div>
               )}
             </div>
-          )}
+          </article>
+        ))
+      }
+    </div>
 
-          {post.text && (
-            <div class="post-content">
-              <p class="post-text">{post.text}</p>
-            </div>
-          )}
-
-          {post.timestamp && (
-            <div class="post-footer">
-              <time class="timestamp">{post.timestamp}</time>
-            </div>
-          )}
-        </article>
-      ))}
+    <div class="mt-12 text-center">
+      <a
+        href={siteConfig.social.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary"
+      >
+        View All Updates on Facebook
+      </a>
     </div>
   </div>
 </section>
-
-<style>
-  .gallery {
-    padding: 4rem 2rem;
-    background: #f5f7fa;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color, #1877f2);
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .post-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  }
-
-  .image-container {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #e4e6eb;
-  }
-
-  .main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .post-card:hover .main-image {
-    transform: scale(1.05);
-  }
-
-  .image-count {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  .post-content {
-    padding: 1.5rem;
-  }
-
-  .post-text {
-    color: #1c1e21;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .post-footer {
-    padding: 0 1.5rem 1.5rem;
-  }
-
-  .timestamp {
-    color: #65676b;
-    font-size: 0.875rem;
-  }
-
-  @media (max-width: 768px) {
-    .gallery {
-      padding: 3rem 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  }
-</style>

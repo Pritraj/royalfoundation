@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-const FACEBOOK_PAGE_URL = 'https://www.facebook.com/profile.php?id=100079902380354';
+const FACEBOOK_PAGE_URL = 'https://www.facebook.com/ravi.bhau.nangre/';
 const OUTPUT_DIR = './scraped-content';
 
 async function scrapeFacebookPage() {
@@ -30,9 +30,9 @@ async function scrapeFacebookPage() {
       () => {
         // Check if we're logged in by looking for common Facebook UI elements
         return document.querySelector('[aria-label="Facebook"]') ||
-               document.querySelector('[role="banner"]') ||
-               document.querySelector('a[href*="/me/"]') ||
-               window.location.href.includes('facebook.com') && !window.location.href.includes('/login');
+          document.querySelector('[role="banner"]') ||
+          document.querySelector('a[href*="/me/"]') ||
+          window.location.href.includes('facebook.com') && !window.location.href.includes('/login');
       },
       { timeout: 120000 } // 2 minute timeout
     );

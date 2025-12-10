@@ -1,0 +1,109 @@
+---
+import { siteConfig } from "../config.js";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+
+const { title = siteConfig.title, description = siteConfig.description } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang={siteConfig.language} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={siteConfig.seo.keywords.join(", ")} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={`${siteConfig.url}${siteConfig.seo.ogImage}`}
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteConfig.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={`${siteConfig.url}${siteConfig.seo.ogImage}`}
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+
+    <style is:global>
+      /* Ensure sticky footer */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300"
+    >
+      <div class="container-custom">
+        <div class="flex justify-between h-20">
+          <div class="flex items-center">
+            <a href="/" class="flex-shrink-0 flex items-center gap-3">
+              <!-- Logo placeholder -->
+              <div
+                class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold text-xl"
+              >
+                R
+              </div>
+              <div>
+                <h1 class="text-xl font-bold text-blue-900 leading-tight">
+                  Ravi Nangre
+                </h1>
+                <p class="text-xs text-orange-500 font-medium tracking-wide">
+                  PCMC | FOUNDATION
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-blue-900 px-3 py-2 text-sm font-medium transition-colors"
+              >About</a
+            >
+            <a
+              href="#vision"
+              class="text-gray-600 hover:text-blue-900 px-3 py-2 text-sm font-medium transition-colors"
+              >Vision</a
+            >
+            <a
+              href="#gallery"
+              class="text-gray-600 hover:text-blue-900 px-3 py-2 text-sm font-medium transition-colors"
+              >Work</a
+            >
+            <a href="#contact" class="btn-primary py-2 px-5 text-sm"
+              >Join Movement</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

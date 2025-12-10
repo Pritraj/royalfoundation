@@ -1,106 +1,108 @@
 ---
-// Hero Component - Main landing section
-import { siteConfig } from '../config.js';
+import { siteConfig } from "../config.js";
 ---
 
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">{siteConfig.name}</h1>
-    <p class="hero-description">{siteConfig.description}</p>
+<section
+  class="relative bg-gradient-to-br from-slate-50 to-white overflow-hidden"
+>
+  <div class="container-custom relative z-10">
+    <div
+      class="flex flex-col lg:flex-row items-center section-padding pt-12 lg:pt-24 pb-0"
+    >
+      <!-- Text Content -->
+      <div
+        class="w-full lg:w-1/2 lg:pr-12 pb-12 lg:pb-24 text-center lg:text-left"
+      >
+        <div
+          class="inline-block px-4 py-1.5 mb-6 rounded-full bg-orange-100 text-orange-600 font-semibold text-sm tracking-wide uppercase"
+        >
+          Corporation Election 2025
+        </div>
+        <h1
+          class="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.1]"
+        >
+          Building a <span class="text-blue-900">Smarter,</span>
+          <br />
+          <span class="text-orange-500">Stronger</span> PCMC
+        </h1>
+        <p
+          class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+        >
+          As the leader of the Science Technology & Skill department, I am
+          committed to empowering our youth, modernizing our infrastructure, and
+          ensuring social welfare for every citizen.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+        >
+          <a href="#contact" class="btn-primary shadow-blue-900/20 shadow-lg">
+            Join Our Movement
+          </a>
+          <a href="#vision" class="btn-secondary"> Our Vision </a>
+        </div>
 
-    <div class="hero-actions">
-      <a href="#gallery" class="btn btn-primary">View Gallery</a>
-      <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-        Follow Us
-      </a>
+        <div
+          class="mt-12 flex items-center justify-center lg:justify-start gap-8 text-gray-500 text-sm font-medium"
+        >
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+            Science & Tech
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+            Skill Development
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+            Social Welfare
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="w-full lg:w-1/2 relative">
+        <div
+          class="aspect-[4/5] lg:aspect-auto lg:h-[600px] w-full relative z-10"
+        >
+          <!-- Background Shape -->
+          <div
+            class="absolute inset-x-4 top-4 bottom-0 bg-blue-900 rounded-t-[3rem] transform rotate-3 opacity-10"
+          >
+          </div>
+          <div
+            class="absolute inset-x-4 top-4 bottom-0 bg-orange-500 rounded-t-[3rem] transform -rotate-2 opacity-10"
+          >
+          </div>
+
+          <!-- Image Placeholder: Using a clean gradient/placeholder if no actual image exists yet -->
+          <div
+            class="absolute inset-0 bg-slate-200 rounded-t-[3rem] overflow-hidden flex items-end justify-center"
+          >
+            <!-- TODO: Replace with actual image of Ravi Nangre -->
+            <div
+              class="w-full h-full bg-gradient-to-t from-slate-900/20 to-transparent flex items-center justify-center text-slate-400"
+            >
+              <span class="text-9xl opacity-20"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-40 w-40"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"></path></svg
+                ></span
+              >
+            </div>
+            <!-- Overlay gradient for text readability if needed -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent h-1/4 bottom-0"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .hero-content {
-    max-width: 800px;
-  }
-
-  .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-  }
-
-  .hero-description {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .btn-primary {
-    background: white;
-    color: #667eea;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
-  }
-
-  .btn-secondary {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid white;
-  }
-
-  .btn-secondary:hover {
-    background: white;
-    color: #667eea;
-  }
-
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn {
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-</style>

@@ -3,9 +3,9 @@
 
 export const siteConfig = {
   // Site Identity
-  name: "Royal Foundation",
-  title: "Royal Foundation - Empowering Communities",
-  description: "Royal Foundation is dedicated to empowering communities through education, healthcare, and social welfare initiatives.",
+  name: "Ravi Nangre",
+  title: "Ravi Nangre - Future of PCMC",
+  description: "Official website of Ravi Nangre, Corporation Election Aspirant and Leader of Science Technology & Skill, PCMC. Voting for Progress, Innovation, and Community Welfare.",
 
   // Domain & URLs
   domain: "royalfoundations.in",
@@ -15,27 +15,31 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/profile.php?id=100079902380354",
     // Add more social links as needed
-    // twitter: "https://twitter.com/yourhandle",
-    // instagram: "https://instagram.com/yourhandle",
+    // twitter: "https://twitter.com/ravinangre",
+    // instagram: "https://instagram.com/ravinangre_official",
+    // linkedin: "https://linkedin.com/in/ravinangre",
   },
 
   // Contact Information
   contact: {
-    email: "contact@royalfoundations.in",
-    // phone: "+91 XXX XXX XXXX",
-    // address: "Your Address Here",
+    email: "contact@royalfoundations.in", // Keeping for footer, but reducing visibility
+    phone: "+91 75195 32222",
+    whatsapp: "https://wa.me/917519532222",
+    address: "PCMC Region, Pune, Maharashtra",
   },
 
   // Branding
   branding: {
-    primaryColor: "#1877f2", // Facebook blue as default
-    secondaryColor: "#42b72a",
-    logo: "/images/logo.png", // Update with your logo path
+    // Professional Political Palette
+    primaryColor: "#003366", // Deep Royal Blue - Trust, Authority
+    secondaryColor: "#FF9933", // Saffron/Gold - Energy, Leadership, Culture
+    accentColor: "#F4F4F4", // Off-white for section backgrounds
+    textColor: "#333333", // Dark Grey for text
   },
 
   // Content Settings
   content: {
-    postsPerPage: 12,
+    postsPerPage: 9, // Reduced for cleaner grid
     showTimestamps: true,
     dateFormat: "dd MMMM yyyy",
   },
@@ -44,13 +48,21 @@ export const siteConfig = {
   base: "/",
 
   // Language
-  language: "en", // Change to "mr" for Marathi if needed
-  locale: "en-US",
+  language: "en",
+  locale: "en-IN",
 
   // SEO
   seo: {
-    keywords: ["royal foundation", "charity", "ngo", "social welfare", "education"],
-    ogImage: "/images/og-image.jpg", // Update with your OG image
+    keywords: [
+      "Ravi Nangre",
+      "PCMC Election",
+      "Corporation Election",
+      "Science Technology Skill Leader",
+      "Social Worker Pune",
+      "Royal Foundation",
+      "Development PCMC"
+    ],
+    ogImage: "/images/og-image.jpg",
   }
 };
 
