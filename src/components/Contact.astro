@@ -16,15 +16,27 @@ import { siteConfig } from "../config.js";
         Join the Movement
       </h4>
       <h2 class="text-3xl lg:text-5xl font-bold mb-8">
-        Ready to Build a Better PCMC?
+        WhatsApp वर मिळणाऱ्या सेवा
       </h2>
-      <p
-        class="text-blue-100 mb-12 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto"
-      >
-        Be a part of the change. Join our official WhatsApp community to get
-        updates, share your ideas, and volunteer for our social initiatives
-        directly with Ravi Nangre.
-      </p>
+      <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto mb-12">
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-lg text-blue-100">
+            <span class="text-green-400 text-xl">✔</span> उपक्रम आणि विकासकामांचे
+            अपडेट्स
+          </li>
+          <li class="flex items-center gap-3 text-lg text-blue-100">
+            <span class="text-green-400 text-xl">✔</span> नागरिकांसाठी सूचना व मार्गदर्शन
+          </li>
+        </ul>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-lg text-blue-100">
+            <span class="text-green-400 text-xl">✔</span> कार्यक्रमांचे निमंत्रण
+          </li>
+          <li class="flex items-center gap-3 text-lg text-blue-100">
+            <span class="text-green-400 text-xl">✔</span> तक्रार नोंदणी आणि फॉलोअप
+          </li>
+        </ul>
+      </div>
 
       <div class="flex flex-col items-center justify-center gap-6">
         <a
@@ -44,9 +56,21 @@ import { siteConfig } from "../config.js";
           >
           Join Mission on WhatsApp
         </a>
-        <p class="text-sm text-blue-200 opacity-80">
-          Direct connection to +91 75195 32222
-        </p>
+        <div class="text-center mt-8 space-y-2">
+          <h3 class="text-xl font-bold text-white mb-4">संपर्क माहिती</h3>
+          <p class="text-blue-200 text-base max-w-lg mx-auto">
+            <strong>कार्यालय:</strong>
+            {siteConfig.contact.address}
+          </p>
+          <p class="text-blue-200">
+            <strong>ईमेल:</strong>
+            {siteConfig.contact.email}
+          </p>
+          <p class="text-blue-200">
+            <strong>फोन:</strong>
+            {siteConfig.contact.phone}
+          </p>
+        </div>
       </div>
     </div>
   </div>

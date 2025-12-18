@@ -7,11 +7,6 @@ import About from "../components/About.astro";
 import Vision from "../components/Vision.astro";
 import Gallery from "../components/Gallery.astro";
 import Contact from "../components/Contact.astro";
-
-// Import Facebook content data
-import facebookData from "../data/facebook-content.json";
-
-const posts = facebookData.posts || [];
 ---
 
 <Layout>
@@ -20,7 +15,7 @@ const posts = facebookData.posts || [];
     <Stats />
     <About />
     <Vision />
-    <Gallery posts={posts} />
+    <Gallery />
     <Contact />
   </main>
 </Layout>

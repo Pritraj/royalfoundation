@@ -22,10 +22,10 @@ export const siteConfig = {
 
   // Contact Information
   contact: {
-    email: "contact@royalfoundations.in", // Keeping for footer, but reducing visibility
-    phone: "+91 75195 32222",
+    email: "ravibhau.nangre@gmail.com / ravinangre09@gmail.com",
+    phone: "9156957566 / 7519532222 / 7507713472",
     whatsapp: "https://wa.me/917519532222",
-    address: "PCMC Region, Pune, Maharashtra",
+    address: "रविभाऊ नांगरे जनसंपर्क कार्यालय, एकता कॉलनी, समीर, भारत माता चौक, काळेवाडी पिंपरी चिंचवड, महाराष्ट्र 411033",
   },
 
   // Branding

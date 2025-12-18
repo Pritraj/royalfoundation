@@ -14,14 +14,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "scrape": "node scripts/facebook-scraper.js",
-    "download-images": "node scripts/download-images.js"
+    "astro": "astro"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.15.8",
-    "puppeteer": "^24.30.0",
     "tailwindcss": "^4.1.17"
   }
 }

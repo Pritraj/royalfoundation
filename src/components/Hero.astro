@@ -14,31 +14,45 @@ import { siteConfig } from "../config.js";
         class="w-full lg:w-1/2 lg:pr-12 pb-12 lg:pb-24 text-center lg:text-left"
       >
         <div
-          class="inline-block px-4 py-1.5 mb-6 rounded-full bg-orange-100 text-orange-600 font-semibold text-sm tracking-wide uppercase"
+          class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 text-blue-900 font-bold text-sm tracking-wide uppercase border border-blue-200"
         >
-          Corporation Election 2025
+          काँग्रेस विज्ञान तंत्रज्ञान व कौशल्य विभाग
         </div>
         <h1
-          class="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.1]"
+          class="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight mb-4 leading-[1.1]"
         >
-          Building a <span class="text-blue-900">Smarter,</span>
-          <br />
-          <span class="text-orange-500">Stronger</span> PCMC
+          काळेवाडीच्या सर्वांगीण विकासासाठी कार्यरत
         </h1>
-        <p
-          class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+        <h2
+          class="text-2xl lg:text-3xl font-bold text-blue-900 mb-6 font-heading"
         >
-          As the leader of the Science Technology & Skill department, I am
-          committed to empowering our youth, modernizing our infrastructure, and
-          ensuring social welfare for every citizen.
-        </p>
+          रवि रमेश नांगरे
+        </h2>
+
+        <div
+          class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium space-y-2"
+        >
+          <p class="flex items-center gap-3">
+            <span class="w-10 h-1 bg-orange-500 rounded-full"></span>
+            शहराध्यक्ष — काँग्रेस विज्ञान तंत्रज्ञान व कौशल्य विभाग, काळेवाडी पिंपरी
+            चिंचवड
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="w-10 h-1 bg-green-500 rounded-full"></span>
+            संस्थापक अध्यक्ष — रॉयल फाउंडेशन
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="w-10 h-1 bg-blue-500 rounded-full"></span>
+            काँग्रेस पक्षाचे सक्रिय राजकीय नेते
+          </p>
+        </div>
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
           <a href="#contact" class="btn-primary shadow-blue-900/20 shadow-lg">
-            Join Our Movement
+            आमच्या चळवळीत सहभागी व्हा
           </a>
-          <a href="#vision" class="btn-secondary"> Our Vision </a>
+          <a href="#vision" class="btn-secondary"> आमचे ध्येय </a>
         </div>
 
         <div
@@ -46,15 +60,15 @@ import { siteConfig } from "../config.js";
         >
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            Science & Tech
+            विज्ञान आणि तंत्रज्ञान
           </div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-            Skill Development
+            कौशल्य विकास
           </div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-            Social Welfare
+            समाज कल्याण
           </div>
         </div>
       </div>
@@ -76,29 +90,24 @@ import { siteConfig } from "../config.js";
 
           <!-- Image Placeholder: Using a clean gradient/placeholder if no actual image exists yet -->
           <div
-            class="absolute inset-0 bg-slate-200 rounded-t-[3rem] overflow-hidden flex items-end justify-center"
+            class="absolute inset-0 bg-slate-100 rounded-t-[3rem] overflow-hidden flex items-end justify-center"
           >
-            <!-- TODO: Replace with actual image of Ravi Nangre -->
+            <!-- Using one of the activity photos as a fallback Hero image since profile is removed -->
+            <img
+              src="/photos/activity-1.png"
+              alt="Ravi Nangre Social Work"
+              class="w-full h-full object-cover object-center opacity-90"
+            />
+
+            <!-- Congress Logo Overlay -->
             <div
-              class="w-full h-full bg-gradient-to-t from-slate-900/20 to-transparent flex items-center justify-center text-slate-400"
+              class="absolute top-8 right-8 w-32 h-32 bg-white/90 backdrop-blur rounded-full p-2 shadow-xl animate-pulse"
             >
-              <span class="text-9xl opacity-20"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-40 w-40"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  ><path
-                    fill-rule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clip-rule="evenodd"></path></svg
-                ></span
-              >
-            </div>
-            <!-- Overlay gradient for text readability if needed -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent h-1/4 bottom-0"
-            >
+              <img
+                src="/logo/congress_logo.png"
+                alt="Congress Party"
+                class="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>

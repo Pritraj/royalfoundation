@@ -1,72 +1,54 @@
 ---
-// Gallery Component - Displays Facebook posts in a responsive grid
+// Gallery Component - Static Photo Gallery
 import { siteConfig } from "../config.js";
 
-interface Props {
-  posts: Array<{
-    id: number;
-    text: string;
-    localImages: string[];
-    timestamp: string;
-  }>;
-}
-
-const { posts } = Astro.props;
-// Limit explicit posts if needed or handle logic
-// For now, displaying all passed posts
+const images = [
+  {
+    src: "/photos/activity-1.png",
+    alt: "रोजगार मेळावा आणि सामाजिक कार्यक्रम",
+    title: "सामाजिक उपक्रम",
+  },
+  {
+    src: "/photos/activity-2.png",
+    alt: "महिला सक्षमीकरण प्रशिक्षण",
+    title: "महिला सक्षमीकरण",
+  },
+  {
+    src: "/photos/activity-3.png",
+    alt: "विद्यार्थी गुणगौरव समारंभ",
+    title: "विद्यार्थी विकास",
+  },
+  { src: "/photos/activity-4.png", alt: "आरोग्य शिबिर", title: "आरोग्य सेवा" },
+];
 ---
 
 <section id="gallery" class="section-padding bg-slate-50">
   <div class="container-custom">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-        Our Impact in Action
+        छायाचित्र दालन
       </h2>
-      <p class="text-gray-600">
-        A glimpse into our daily social welfare activities and community
-        engagements.
+      <p class="text-gray-600 text-lg">
+        आमच्या विविध सामाजिक उपक्रमांची काही क्षणचित्रे
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {
-        posts.map((post) => (
-          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full border border-gray-100">
-            {post.localImages && post.localImages.length > 0 && (
-              <div class="relative aspect-video bg-gray-100 overflow-hidden group">
-                <img
-                  src={post.localImages[0]}
-                  alt={`Activity from ${post.timestamp}`}
-                  loading="lazy"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                {post.localImages.length > 1 && (
-                  <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    +{post.localImages.length - 1} more
-                  </div>
-                )}
+        images.map((img) => (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span class="text-white font-semibold">{img.title}</span>
               </div>
-            )}
-
-            <div class="p-6 flex-1 flex flex-col">
-              {post.text && (
-                <div class="mb-4 flex-1">
-                  <p class="text-gray-700 text-sm leading-relaxed line-clamp-3">
-                    {post.text}
-                  </p>
-                </div>
-              )}
-
-              {post.timestamp && (
-                <div class="pt-4 border-t border-gray-50 flex items-center justify-between text-xs text-gray-500 font-medium">
-                  <time>{post.timestamp}</time>
-                  <span class="text-blue-900 bg-blue-50 px-2 py-1 rounded-md">
-                    Updates
-                  </span>
-                </div>
-              )}
             </div>
-          </article>
+          </div>
         ))
       }
     </div>
@@ -78,7 +60,7 @@ const { posts } = Astro.props;
         rel="noopener noreferrer"
         class="btn-secondary"
       >
-        View All Updates on Facebook
+        फेसबुकवर अधिक फोटो पहा
       </a>
     </div>
   </div>
